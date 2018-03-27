@@ -1,8 +1,11 @@
 var myHeading = document.querySelector('h1');
-myHeading.innerHTML = 'Cloud Service<br>2108-1';
+var id = localStorage.getItem('id');
+myHeading.innerHTML = 'Homepage';
 function getIdPW() {
+
     var id = prompt('ID입력', '');
     alert(id + '가 로그인함.');
+    localStorage.setItem('id', id);
     var passwordSystem = '12345';
     var password = prompt('pw 입력', '');
     if (password === passwordSystem) alert('정상 로그인!');
@@ -22,4 +25,7 @@ myImg.onclick = function () {
         myImg.setAttribute('src', 'images/firefox-icon.png');
     }
 }
-
+var myButton = document.querySelector('button');
+myButton.onclick = function() {
+    getIdPW();
+}
